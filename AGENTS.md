@@ -36,8 +36,10 @@ All non-trivial feature implementations, database changes, and structural update
 
 ## Monorepo Architecture & Rules
 - **Layer Separation:** Keep business domain logic isolated from platform UI implementations (Jetpack Compose / Android / iOS).
-- **Gradle & Proxy Gotchas:**
-  - Build scripts and dependencies are managed via **Gradle**.
+- **Build Tools & Proxy Gotchas:**
+  - **Backend**: Maven for build management.
+  - **Mobile**: Gradle for build management.
+  - Respect global proxy configs defined in `~/.m2/settings.xml` (Maven) and `~/.gradle/gradle.properties` (Gradle).
   - Respect global proxy configs defined in `~/.gradle/gradle.properties`.
   - Use `./gradlew <task>` wrapper commands for consistency.
 - **No Hallucinated Imports:** Verify every class or function symbol via CodeGraph before referencing it in implementation code.

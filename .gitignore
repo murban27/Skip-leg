@@ -63,6 +63,15 @@ build/
 */build/
 !gradle/wrapper/gradle-wrapper.jar
 
+# Maven
+.target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+.mvn/temp/
+
 # Logs
 *.log
 logs/
