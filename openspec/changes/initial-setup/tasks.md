@@ -21,11 +21,11 @@
 
 ### 2.2 Activity Tracking
 
-- [ ] 2.2.1 Implement activity logging endpoint (`POST /api/activities`). Verify the endpoint records activities and returns a success response.
-- [ ] 2.2.2 Implement activity retrieval endpoint (`GET /api/activities`). Verify the endpoint returns a list of logged activities.
-- [ ] 2.2.3 Implement activity update endpoint (`PUT /api/activities/{id}`). Verify the endpoint updates activities and returns a success response.
-- [ ] 2.2.4 Implement activity deletion endpoint (`DELETE /api/activities/{id}`). Verify the endpoint deletes activities and returns a success response.
-- [ ] 2.2.5 Write unit tests for activity endpoints. Verify all tests pass.
+- [x] 2.2.1 Implement activity logging endpoint (`POST /api/activities`). Verify the endpoint records activities and returns a success response.
+- [x] 2.2.2 Implement activity retrieval endpoint (`GET /api/activities`). Verify the endpoint returns a list of logged activities.
+- [x] 2.2.3 Implement activity update endpoint (`PUT /api/activities/{id}`). Verify the endpoint updates activities and returns a success response.
+- [x] 2.2.4 Implement activity deletion endpoint (`DELETE /api/activities/{id}`). Verify the endpoint deletes activities and returns a success response.
+- [x] 2.2.5 Write unit tests for activity endpoints. Verify all tests pass.
 
 
 ### 2.3 Real-Time Updates
@@ -54,18 +54,18 @@
 
 ### 5.1 Android (Kotlin)
 
-- [ ] 5.1.1 Implement mock login screen. Verify the screen renders correctly and handles user input.
-- [ ] 5.1.2 Implement activity logging and retrieval screens. Verify the screens render correctly and display activities.
-- [ ] 5.1.3 Integrate WebSocket for real-time updates. Verify updates are received and displayed in real-time.
-- [ ] 5.1.4 Write unit tests for mobile components. Verify all tests pass.
+- [x] 5.1.1 Implement mock login screen. Verify the screen renders correctly and handles user input.
+- [x] 5.1.2 Implement activity logging and retrieval screens. Verify the screens render correctly and display activities.
+- [x] 5.1.3 Integrate WebSocket for real-time updates. Verify updates are received and displayed in real-time.
+- [x] 5.1.4 Write unit tests for mobile components. Verify all tests pass.
 
 
 ### 5.2 iOS (Swift)
 
-- [ ] 5.2.1 Implement mock login screen. Verify the screen renders correctly and handles user input.
-- [ ] 5.2.2 Implement activity logging and retrieval screens. Verify the screens render correctly and display activities.
-- [ ] 5.2.3 Integrate WebSocket for real-time updates. Verify updates are received and displayed in real-time.
-- [ ] 5.2.4 Write unit tests for mobile components. Verify all tests pass.
+- [x] 5.2.1 Implement mock login screen. Verify the screen renders correctly and handles user input.
+- [x] 5.2.2 Implement activity logging and retrieval screens. Verify the screens render correctly and display activities.
+- [x] 5.2.3 Integrate WebSocket for real-time updates. Verify updates are received and displayed in real-time.
+- [x] 5.2.4 Write unit tests for mobile components. Verify all tests pass.
 
 
 ## 6. UI/UX Design (Placeholder)
@@ -76,9 +76,9 @@
 
 ## 7. Testing
 
-- [ ] 7.1 Write integration tests for backend APIs. Verify all tests pass.
-- [ ] 7.2 Write end-to-end tests for mobile apps. Verify all tests pass.
-- [ ] 7.3 Test real-time updates and database interactions. Verify all scenarios work as expected.
+- [x] 7.1 Write integration tests for backend APIs. Verify all tests pass.
+- [x] 7.2 Write end-to-end tests for mobile apps. Verify all tests pass.
+- [x] 7.3 Test real-time updates and database interactions. Verify all scenarios work as expected.
 
 
 ## 8. Documentation
