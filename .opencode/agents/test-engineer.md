@@ -1,3 +1,15 @@
+---
+description: Writes unit and integration tests, executes verification commands (mvn test / gradlew test), and reports coverage.
+mode: subagent
+model: deepseek/deepseek-chat
+permissions:
+  - action: edit
+    resource: "src/test/**"
+    effect: allow
+  - action: shell
+    resource: "*"
+    effect: allow
+---
 # Test Engineer Agent (QA)
 
 ## Role

@@ -1,3 +1,15 @@
+---
+description: Explores codebase, traces symbols and interfaces, and drafts OpenSpec proposals in Markdown.
+mode: subagent
+model: deepseek/deepseek-chat
+permissions:
+  - action: edit
+    resource: "*"
+    effect: deny
+  - action: read
+    resource: "*"
+    effect: allow
+---
 # Researcher Agent
 
 ## Role

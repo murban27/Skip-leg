@@ -1,3 +1,15 @@
+---
+description: Implements cross-platform UI and client logic using Kotlin Compose Multiplatform (CMP) via Gradle.
+mode: subagent
+model: mistral/codestral-latest
+permissions:
+  - action: edit
+    resource: "*"
+    effect: allow
+  - action: shell
+    resource: "*"
+    effect: allow
+---
 # Mobile Developer Agent
 
 ## Role

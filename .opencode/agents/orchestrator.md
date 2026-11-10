@@ -1,3 +1,12 @@
+---
+description: Main supervisor. Analyzes requirements, coordinates sub-agents, oversees OpenSpec proposals, and delegates tasks.
+mode: primary
+model: mistral/mistral-large-latest
+permissions:
+  - action: subagent
+    resource: "*"
+    effect: allow
+---
 # Orchestrator Agent (Supervisor)
 
 ## Role

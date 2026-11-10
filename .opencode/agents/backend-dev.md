@@ -1,3 +1,15 @@
+---
+description: Writes production Java/Kotlin backend code, database schemas, and REST APIs using Maven.
+mode: subagent
+model: mistral/codestral-latest
+permissions:
+  - action: edit
+    resource: "*"
+    effect: allow
+  - action: shell
+    resource: "*"
+    effect: allow
+---
 # Backend Developer Agent
 
 ## Role
