@@ -18,6 +18,8 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '18'
+      - name: Set Yarn Version
+        run: yarn set version 4.10.3
 
       - name: Install Dependencies
         run: yarn install
