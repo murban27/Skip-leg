@@ -1,7 +1,7 @@
 ---
 description: Explores codebase, traces symbols and interfaces, and drafts OpenSpec proposals in Markdown.
 mode: subagent
-model: deepseek/deepseek-chat
+model: opencode/deepseek-v4.1-flash-free
 permissions:
   - action: edit
     resource: "*"

@@ -1,82 +1,53 @@
-# Java
-*.class
-*.jar
-*.war
-*.ear
-*.log
-*.hprof
-*.orig
-*.swp
-*.tmp
-*.bak
-*.classpath
-*.project
-*.settings/
-bin/
-target/
-build/
-out/
-.gradle/
-.idea/
-*.iml
-
-# Kotlin
-*.kotlin_module
-*.ktsbuild
-*.kttx
-
-# Android
-*.apk
-*.aar
-*.dex
-*.so
-local.properties
-*.keystore
-*.jks
-/.cxx/
-/build/
-/app/build/
-/*.log
-/.DS_Store
-/.metadata
-/.recommenders
-
-# IntelliJ
-.idea/
-*.iws
-*.ipr
+# React Native
+/node_modules
+/.vscode
+/.idea
 *.iml
 *.swp
 *.swo
 
-# macOS
+# Android
+mobile/android/app/build
+mobile/android/.gradle
+mobile/android/app/.cxx
+mobile/android/app/debug.keystore
+mobile/.gradle
+
+# iOS
+iosApp/Pods
+iosApp/build
+
+# Backend
+backend/target
+backend/.mvn
+backend/.idea
+
+# Shared
+shared/build
+shared/.gradle
+
+# OpenSpec
+openspec/changes/**/tasks.md
+
+# Misc
 .DS_Store
-.DS_Store?
-
-# Windows
-Thumbs.db
-ehthumbs.db
-
-# Gradle
-.gradle/
-build/
-*/build/
-!gradle/wrapper/gradle-wrapper.jar
-
-# Maven
-.target/
-pom.xml.tag
-pom.xml.releaseBackup
-pom.xml.versionsBackup
-pom.xml.next
-release.properties
-.mvn/temp/
-
-# Logs
-*.log
-logs/
-
-# Environment files
 .env
-.env.local
-.env.*.local
+*.log
+*.bak
+*.tmp
+
+# IDE
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# OS
+Thumbs.db
+
+# Yarn
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+.pnp.*
