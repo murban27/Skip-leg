@@ -1,0 +1,8 @@
+CREATE TABLE progress (
+    id BIGSERIAL PRIMARY KEY,
+    user_id BIGINT NOT NULL,
+    metric_type VARCHAR(100) NOT NULL,
+    value DECIMAL(10, 2) NOT NULL,
+    recorded_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+);

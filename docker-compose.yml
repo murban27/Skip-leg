@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15
+    container_name: fitnessapp_postgres
+    environment:
+      POSTGRES_USER: fitnessapp
+      POSTGRES_PASSWORD: fitnessapp
+      POSTGRES_DB: fitnessapp
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - fitnessapp_network
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: fitnessapp_backend
+    depends_on:
+      - postgres
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/fitnessapp
+      SPRING_DATASOURCE_USERNAME: fitnessapp
+      SPRING_DATASOURCE_PASSWORD: fitnessapp
+    ports:
+      - "8080:8080"
+    networks:
+      - fitnessapp_network
+
+volumes:
+  postgres_data:
+
+networks:
+  fitnessapp_network:
+    driver: bridge

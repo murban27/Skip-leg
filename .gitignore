@@ -1,0 +1,82 @@
+# Java
+*.class
+*.jar
+*.war
+*.ear
+*.log
+*.hprof
+*.orig
+*.swp
+*.tmp
+*.bak
+*.classpath
+*.project
+*.settings/
+bin/
+target/
+build/
+out/
+.gradle/
+.idea/
+*.iml
+
+# Kotlin
+*.kotlin_module
+*.ktsbuild
+*.kttx
+
+# Android
+*.apk
+*.aar
+*.dex
+*.so
+local.properties
+*.keystore
+*.jks
+/.cxx/
+/build/
+/app/build/
+/*.log
+/.DS_Store
+/.metadata
+/.recommenders
+
+# IntelliJ
+.idea/
+*.iws
+*.ipr
+*.iml
+*.swp
+*.swo
+
+# macOS
+.DS_Store
+.DS_Store?
+
+# Windows
+Thumbs.db
+ehthumbs.db
+
+# Gradle
+.gradle/
+build/
+*/build/
+!gradle/wrapper/gradle-wrapper.jar
+
+# Maven
+.target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+.mvn/temp/
+
+# Logs
+*.log
+logs/
+
+# Environment files
+.env
+.env.local
+.env.*.local

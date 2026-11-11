@@ -1,0 +1,49 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "default_agent": "orchestrator",
+  "enable_worktree": true,
+  "mcp": {
+    "gitHub": {
+      "type": "local",
+      "command": [
+        "docker",
+        "run",
+        "-i",
+        "--rm",
+        "-e",
+        "GITHUB_PERSONAL_ACCESS_TOKEN",
+        "ghcr.io/github/github-mcp-server"
+      ],
+      "environment": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "{env:GITHUB_PERSONAL_ACCESS_TOKEN_PERSONAL}"
+      }
+    }
+  },
+  "agents": {
+    "orchestrator": {
+      "model": "mistral/mistral-large-latest",
+      "description": "Main supervisor. Analyzes requirements, coordinates sub-agents, oversees OpenSpec proposals, and delegates tasks.",
+      "instructions_file": ".opencode/agents/orchestrator.md"
+    },
+    "researcher": {
+      "model": "deepseek/deepseek-chat",
+      "description": "Explores codebase, traces symbols and interfaces, and drafts OpenSpec proposals in Markdown.",
+      "instructions_file": ".opencode/agents/researcher.md"
+    },
+    "backend-dev": {
+      "model": "mistral/codestral-latest",
+      "description": "Writes production Java/Kotlin backend code, database schemas, and REST APIs using Maven.",
+      "instructions_file": ".opencode/agents/backend-dev.md"
+    },
+    "mobile-dev": {
+      "model": "mistral/codestral-latest",
+      "description": "Implements cross-platform UI and client logic using Kotlin Compose Multiplatform (CMP) via Gradle.",
+      "instructions_file": ".opencode/agents/mobile-dev.md"
+    },
+    "test-engineer": {
+      "model": "deepseek/deepseek-chat",
+      "description": "Writes unit and integration tests, executes verification commands (mvn test / gradlew test), and reports coverage.",
+      "instructions_file": ".opencode/agents/test-engineer.md"
+    }
+  }
+}
