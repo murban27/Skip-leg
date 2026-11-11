@@ -22,13 +22,14 @@ jobs:
       - name: Enable Corepack
         run: corepack enable
 
+      - name: Set Yarn Version
+        run: yarn set version 4.10.3
+
       - name: Install Dependencies
         run: yarn install
 
       - name: Run Unit and Integration Tests
-        run: yarn workspaces focus mobile && yarn test
-        working-directory: mobile
+        run: cd mobile && yarn test
 
       - name: Build Android App
-        run: npx react-native run-android --variant=release
-        working-directory: mobile
+        run: cd mobile && npx react-native run-android --variant=release
