@@ -26,7 +26,7 @@
       "instructions_file": ".opencode/agents/orchestrator.md"
     },
     "researcher": {
-      "model": "mistral/mistral-small-latest",
+      "model": "deepseek/deepseek-chat",
       "description": "Explores codebase, traces symbols and interfaces, and drafts OpenSpec proposals in Markdown.",
       "instructions_file": ".opencode/agents/researcher.md"
     },
@@ -41,7 +41,7 @@
       "instructions_file": ".opencode/agents/mobile-dev.md"
     },
     "test-engineer": {
-      "model": "mistral/mistral-medium-latest",
+      "model": "deepseek/deepseek-chat",
       "description": "Writes unit and integration tests, executes verification commands (mvn test / gradlew test), and reports coverage.",
       "instructions_file": ".opencode/agents/test-engineer.md"
     }

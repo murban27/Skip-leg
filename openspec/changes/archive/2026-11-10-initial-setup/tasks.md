@@ -5,7 +5,7 @@
 - [ ] 1.0 Install Gradle. Verify Gradle is installed and accessible using `gradle -v`.
 - [x] 1.1 Initialize the monorepo structure with backend, mobile, and shared modules. Verify the directory structure matches the design.
 - [x] 1.2 Configure Maven for build management. Verify `mvn clean install` runs successfully.
-- [ ] 1.3 Set up PostgreSQL database and verify the connection using `psql`.
+- [x] 1.3 Set up PostgreSQL database and verify the connection using `psql`.
 - [x] 1.4 Create a `docker-compose.yml` file for local development. Verify services start successfully using `docker-compose up`.
 
 
@@ -83,9 +83,9 @@
 
 ## 8. Documentation
 
-- [ ] 8.1 Document backend APIs using OpenAPI/Swagger. Verify the documentation is accessible and accurate.
-- [ ] 8.2 Document mobile app features and usage. Verify the documentation is clear and comprehensive.
-- [ ] 8.3 Document Docker Compose setup and usage. Verify the documentation is clear and actionable.
+- [x] 8.1 Document backend APIs using OpenAPI/Swagger. Verify the documentation is accessible and accurate.
+- [x] 8.2 Document mobile app features and usage. Verify the documentation is clear and comprehensive.
+- [x] 8.3 Document Docker Compose setup and usage. Verify the documentation is clear and actionable.
 
 
 ## Workflow Follow-Up
