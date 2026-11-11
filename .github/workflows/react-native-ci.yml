@@ -22,15 +22,11 @@ jobs:
       - name: Enable Corepack
         run: corepack enable
 
-      - name: Set Yarn Version
-        run: yarn set version 4.10.3
-
       - name: Install Dependencies
         run: yarn install
-        working-directory: mobile
 
       - name: Run Unit and Integration Tests
-        run: yarn test
+        run: yarn workspaces focus mobile && yarn test
         working-directory: mobile
 
       - name: Build Android App
