@@ -26,7 +26,7 @@ jobs:
         run: yarn set version 4.10.3
 
       - name: Install Dependencies
-        run: yarn install --check-files
+        run: yarn install
 
       - name: Run Unit and Integration Tests
         run: cd mobile && yarn test
