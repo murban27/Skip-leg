@@ -1,0 +1,108 @@
+openapi: 3.0.0
+info:
+  title: FitnessApp API
+  description: API documentation for the FitnessApp backend
+  version: 1.0.0
+servers:
+  - url: http://localhost:8080
+    description: Local development server
+paths:
+  /api/auth/mock-register:
+    post:
+      summary: Mock user registration
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                password:
+                  type: string
+      responses:
+        '200':
+          description: User registered successfully
+  /api/auth/mock-login:
+    post:
+      summary: Mock user login
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                password:
+                  type: string
+      responses:
+        '200':
+          description: User logged in successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  token:
+                    type: string
+  /api/activities:
+    post:
+      summary: Log an activity
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                userId:
+                  type: string
+                type:
+                  type: string
+                duration:
+                  type: integer
+                intensity:
+                  type: string
+      responses:
+        '200':
+          description: Activity logged successfully
+    get:
+      summary: Retrieve activities
+      responses:
+        '200':
+          description: List of activities
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                    userId:
+                      type: string
+                    type:
+                      type: string
+                    duration:
+                      type: integer
+                    intensity:
+                      type: string
+components:
+  schemas:
+    Activity:
+      type: object
+      properties:
+        id:
+          type: string
+        userId:
+          type: string
+        type:
+          type: string
+        duration:
+          type: integer
+        intensity:
+          type: string
