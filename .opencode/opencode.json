@@ -17,6 +17,14 @@
       "environment": {
         "GITHUB_PERSONAL_ACCESS_TOKEN": "{env:GITHUB_PERSONAL_ACCESS_TOKEN_PERSONAL}"
       }
+    },
+    "servers": {
+      "metro-mcp": {
+        "type": "local",
+        "command": [
+          "npx -y metro-mcp"
+        ]
+      }
     }
   },
   "agents": {
