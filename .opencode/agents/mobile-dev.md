@@ -26,7 +26,14 @@ The `@mobile-dev` agent is responsible for implementing and maintaining the **mo
 - Write **unit and integration tests** using **Jest** and **React Testing Library**.
 - Configure **environment variables** (`.env` files) and **GitHub Environments** for dynamic configurations.
 - Use **Expo EAS Build** for cloud builds and deployments.
-
+- 
+## Skills
+When implementing or polishing UI, load and follow these Expo skills where they do not conflict with this agent:
+- `expo-native-ui` — native-feeling screens, semantic colors, safe areas, platform styling
+- `expo-animation` — Reanimated + Gesture Handler patterns
+- `expo-design-system` — design tokens and consistent component conventions
+- `expo-dev-client` — development client / Bare workflow concerns
+- 
 ## Technology Stack
 - **Framework**: Expo Bare Workflow (React Native)
 - **Language**: TypeScript
