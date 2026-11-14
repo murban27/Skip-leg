@@ -2,13 +2,16 @@
 description: Researches and analyzes the FitnessApp project to provide insights and recommendations.
 mode: subagent
 model: mistral/codestral-latest
-permissions:
-  - action: edit
-    resource: "*"
-    effect: allow
-  - action: shell
-    resource: "*"
-    effect: allow
+tools:
+  bash: true
+  edit: true
+  write: true
+  read: true
+  grep: true
+  glob: true
+permission:
+  edit: allow
+  bash: allow
 ---
 
 # Researcher Agent

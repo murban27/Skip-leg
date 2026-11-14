@@ -2,13 +2,16 @@
 description: Implements cross-platform UI and client logic using Expo Bare Workflow with TypeScript.
 mode: subagent
 model: mistral/codestral-latest
-permissions:
-  - action: edit
-    resource: "*"
-    effect: allow
-  - action: shell
-    resource: "*"
-    effect: allow
+tools:
+  bash: true
+  edit: true
+  write: true
+  read: true
+  grep: true
+  glob: true
+permission:
+  edit: allow
+  bash: allow
 ---
 
 # Mobile Developer Agent

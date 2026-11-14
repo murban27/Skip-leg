@@ -2,13 +2,16 @@
 description: Writes and maintains tests for the FitnessApp project using Jest and JUnit.
 mode: subagent
 model: mistral/codestral-latest
-permissions:
-  - action: edit
-    resource: "*"
-    effect: allow
-  - action: shell
-    resource: "*"
-    effect: allow
+tools:
+  bash: true
+  edit: true
+  write: true
+  read: true
+  grep: true
+  glob: true
+permission:
+  edit: allow
+  bash: allow
 ---
 
 # Test Engineer Agent
