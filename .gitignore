@@ -5,7 +5,8 @@
 *.iml
 *.swp
 *.swo
-
+#worktrees
+.worktrees
 # Android
 mobile/android/app/build
 mobile/android/.gradle
