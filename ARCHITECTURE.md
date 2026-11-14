@@ -13,14 +13,15 @@ FitnessApp is a multi-platform application with a **backend**, **mobile UI**, an
 - **Real-Time Updates**: WebSocket
 
 ### Components
-- **Controllers**: Handle HTTP requests and responses.
-  - `ActivityController`: Manages fitness activities.
-  - `AuthController`: Handles user authentication.
-  - `WorkoutWebSocketController`: Manages WebSocket connections for real-time updates.
-- **Services**: Contain business logic.
-- **Repositories**: Interact with the database.
-- **Configuration**: WebSocket and security configurations.
+The backend follows a Clean Architecture layering (single Maven module, package-enforced):
 
+- `fitnessapp.domain` — Entities: core business objects (`Activity`, `User`) and repository ports (`ActivityRepository`, `UserRepository`). Pure Java, no framework dependencies.
+- `fitnessapp.application` — Use Cases: business logic orchestrating entities through ports (`RegisterUserUseCase`, `LoginUserUseCase`, `LogActivityUseCase`, `ListActivitiesUseCase`, `UpdateActivityUseCase`, `DeleteActivityUseCase`). No Spring or HTTP types.
+- `fitnessapp.infrastructure` — Frameworks & Drivers: JPA entities and Spring Data adapters implementing the domain ports, the JWT token filter, and security configuration.
+- `fitnessapp.api` — Interface Adapters serving the React Native mobile app: REST controllers (`AuthController`, `ActivityController`), the WebSocket controller (`WorkoutWebSocketController`), DTOs, and exception-to-HTTP mapping.
+- `fitnessapp.config` — Composition root: bean wiring (`UseCaseConfig`, `WebSocketConfig`).
+
+Dependencies point inward only: `api`/`infrastructure` → `application` → `domain`.
 ## Mobile
 
 ### Technology Stack
