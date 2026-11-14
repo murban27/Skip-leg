@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: fitnessapp-backend
+
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/fitnessapp}
+    username: ${SPRING_DATASOURCE_USERNAME:fitnessapp}
+    password: ${SPRING_DATASOURCE_PASSWORD:fitnessapp}
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+
+  flyway:
+    enabled: true
+
+server:
+  port: 8080
