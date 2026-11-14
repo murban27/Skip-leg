@@ -7,12 +7,12 @@ import configureStore from 'redux-mock-store';
 const mockStore = configureStore([]);
 
 describe('LoginScreen', () => {
-  it('renders correctly', () => {
+  it('renders correctly', async () => {
     const store = mockStore({
       auth: { isAuthenticated: false, token: null },
     });
 
-    const { getByPlaceholderText, getByText } = render(
+    const { getByPlaceholderText, getByText } = await render(
       <Provider store={store}>
         <LoginScreen />
       </Provider>
@@ -23,20 +23,20 @@ describe('LoginScreen', () => {
     expect(getByText('Login')).toBeTruthy();
   });
 
-  it('dispatches login action on button press', () => {
+  it('dispatches login action on button press', async () => {
     const store = mockStore({
       auth: { isAuthenticated: false, token: null },
     });
 
-    const { getByPlaceholderText, getByText } = render(
+    const { getByPlaceholderText, getByText } = await render(
       <Provider store={store}>
         <LoginScreen />
       </Provider>
     );
 
-    fireEvent.changeText(getByPlaceholderText('Email'), 'test@example.com');
-    fireEvent.changeText(getByPlaceholderText('Password'), 'password');
-    fireEvent.press(getByText('Login'));
+    await fireEvent.changeText(getByPlaceholderText('Email'), 'test@example.com');
+    await fireEvent.changeText(getByPlaceholderText('Password'), 'password');
+    await fireEvent.press(getByText('Login'));
 
     const actions = store.getActions();
     expect(actions).toEqual([

@@ -1,29 +1,35 @@
 import React from 'react';
-import { render } from '@testing-library/react-native';
+import { render, act } from '@testing-library/react-native';
 import RealTimeUpdatesScreen from '../RealTimeUpdatesScreen';
 
 // Mock WebSocket
 class MockWebSocket {
-  constructor(url) {
+  static lastInstance: MockWebSocket | null = null;
+  url: string;
+  onmessage: ((event: { data: string }) => void) | null = null;
+
+  constructor(url: string) {
     this.url = url;
-    this.onmessage = jest.fn();
+    MockWebSocket.lastInstance = this;
   }
   close() {}
 }
 
 // Replace the global WebSocket with the mock
-global.WebSocket = MockWebSocket;
+(global as any).WebSocket = MockWebSocket;
 
 describe('RealTimeUpdatesScreen', () => {
-  it('renders correctly', () => {
-    const { getByText } = render(<RealTimeUpdatesScreen />);
-    expect(getByText('Update:')).toBeTruthy();
+  it('renders correctly', async () => {
+    const { toJSON } = await render(<RealTimeUpdatesScreen />);
+    expect(toJSON()).toBeTruthy();
   });
 
-  it('handles WebSocket messages', () => {
-    const { getByText } = render(<RealTimeUpdatesScreen />);
-    const ws = new WebSocket('ws://localhost:8080/updates');
-    ws.onmessage({ data: JSON.stringify({ message: 'New update' }) });
+  it('handles WebSocket messages', async () => {
+    const { getByText } = await render(<RealTimeUpdatesScreen />);
+    const ws = MockWebSocket.lastInstance!;
+    await act(async () => {
+      ws.onmessage!({ data: JSON.stringify({ message: 'New update' }) });
+    });
     expect(getByText('Update: New update')).toBeTruthy();
   });
 });

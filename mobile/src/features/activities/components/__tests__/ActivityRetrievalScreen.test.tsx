@@ -7,7 +7,7 @@ import configureStore from 'redux-mock-store';
 const mockStore = configureStore([]);
 
 describe('ActivityRetrievalScreen', () => {
-  it('renders correctly', () => {
+  it('renders correctly', async () => {
     const store = mockStore({
       activities: {
         activities: [
@@ -17,7 +17,7 @@ describe('ActivityRetrievalScreen', () => {
       },
     });
 
-    const { getByText } = render(
+    const { getByText } = await render(
       <Provider store={store}>
         <ActivityRetrievalScreen />
       </Provider>

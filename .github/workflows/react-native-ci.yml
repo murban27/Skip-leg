@@ -31,5 +31,13 @@ jobs:
       - name: Run Unit and Integration Tests
         run: cd mobile && yarn test
 
-      - name: Build Android App
-        run: cd mobile && npx react-native run-android --variant=release
+      - name: Setup Expo
+        uses: expo/expo-github-action@v8
+        with:
+          eas-version: latest
+          token: ${{ secrets.EXPO_TOKEN }}
+
+      - name: Build Android App with EAS
+        run: cd mobile && eas build --platform android --non-interactive
+        env:
+          EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
