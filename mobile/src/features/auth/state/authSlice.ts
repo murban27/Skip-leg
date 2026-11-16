@@ -14,7 +14,7 @@ const authSlice = createSlice({
   name: 'auth',
   initialState,
   reducers: {
-    login(state, action: PayloadAction<{ email: string; password: string }>) {
+    login(state, _action: PayloadAction<{ email: string; password: string }>) {
       state.isAuthenticated = true;
       state.token = 'mock-jwt-token';
     },
