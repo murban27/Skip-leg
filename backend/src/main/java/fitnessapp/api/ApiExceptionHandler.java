@@ -2,6 +2,9 @@ package fitnessapp.api;
 
 import fitnessapp.application.ActivityNotFoundException;
 import fitnessapp.application.InvalidCredentialsException;
+import fitnessapp.application.RoutineNotFoundException;
+import fitnessapp.application.SessionAlreadyCompletedException;
+import fitnessapp.application.SessionNotFoundException;
 import fitnessapp.application.UserAlreadyExistsException;
 import java.util.Map;
 import org.springframework.http.HttpStatus;
@@ -33,6 +36,21 @@ public class ApiExceptionHandler {
     @ExceptionHandler(IllegalArgumentException.class)
     public ResponseEntity<Map<String, String>> handleIllegalArgument(IllegalArgumentException e) {
         return error(HttpStatus.BAD_REQUEST, e.getMessage());
+    }
+
+    @ExceptionHandler(RoutineNotFoundException.class)
+    public ResponseEntity<Map<String, String>> handleRoutineNotFound(RoutineNotFoundException e) {
+        return error(HttpStatus.NOT_FOUND, e.getMessage());
+    }
+
+    @ExceptionHandler(SessionNotFoundException.class)
+    public ResponseEntity<Map<String, String>> handleSessionNotFound(SessionNotFoundException e) {
+        return error(HttpStatus.NOT_FOUND, e.getMessage());
+    }
+
+    @ExceptionHandler(SessionAlreadyCompletedException.class)
+    public ResponseEntity<Map<String, String>> handleSessionAlreadyCompleted(SessionAlreadyCompletedException e) {
+        return error(HttpStatus.CONFLICT, e.getMessage());
     }
 
     private ResponseEntity<Map<String, String>> error(HttpStatus status, String message) {
