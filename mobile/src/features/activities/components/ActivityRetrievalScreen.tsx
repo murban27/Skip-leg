@@ -2,10 +2,11 @@ import React, { useEffect } from 'react';
 import { View, Text, FlatList, StyleSheet } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchActivities } from '../state/activitiesSlice';
+import type { RootState } from '../../../shared/state/store';
 
 const ActivityRetrievalScreen = () => {
   const dispatch = useDispatch();
-  const activities = useSelector((state) => state.activities.activities);
+  const activities = useSelector((state: RootState) => state.activities.activities);
 
   useEffect(() => {
     dispatch(fetchActivities());
