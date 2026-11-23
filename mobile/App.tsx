@@ -8,7 +8,7 @@ import AppNavigator from './src/navigation/AppNavigator';
 function App() {
   return (
     <SafeAreaProvider>
-      <StatusBar barStyle="dark-content" />
+      <StatusBar barStyle="light-content" />
       <Provider store={store}>
         <AppNavigator />
       </Provider>

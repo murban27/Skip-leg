@@ -21,6 +21,7 @@ export const AppButton = ({ label, onPress, variant = 'primary', disabled = fals
   const textStyle = [
     styles.textBase,
     variant === 'ghost' && styles.ghostText,
+    variant === 'primary' && styles.primaryText,
   ];
 
   return (
@@ -67,6 +68,9 @@ const styles = StyleSheet.create({
   textBase: {
     ...typography.body,
     color: colors.textPrimary,
+  },
+  primaryText: {
+    color: colors.background,
   },
   ghostText: {
     color: colors.accent,

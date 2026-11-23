@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, ScrollView, StyleSheet, ViewStyle, ScrollViewProps } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { spacing } from '../theme';
+import { colors, spacing } from '../theme';
 
 interface ScreenProps extends ScrollViewProps {
   scrollable?: boolean;
@@ -22,7 +22,8 @@ export const Screen = ({ scrollable = false, style, children, ...props }: Screen
   if (scrollable) {
     return (
       <ScrollView
-        contentContainerStyle={[contentContainerStyle, style]}
+        style={[styles.container, style]}
+        contentContainerStyle={contentContainerStyle}
         keyboardShouldPersistTaps="handled"
         {...props}
       >
@@ -43,5 +44,6 @@ export default Screen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: colors.background,
   },
 });
