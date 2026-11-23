@@ -22,8 +22,14 @@
       "metro-mcp": {
         "type": "local",
         "command": [
-          "npx -y metro-mcp"
+          "npx",
+          "-y",
+          "metro-mcp"
         ]
+      },
+      "expo": {
+        "type": "remote",
+        "url": "https://mcp.expo.dev/mcp"
       }
     }
   },

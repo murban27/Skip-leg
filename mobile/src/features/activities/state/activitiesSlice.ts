@@ -21,7 +21,7 @@ const activitiesSlice = createSlice({
     logActivity(state, action: PayloadAction<Activity>) {
       state.activities.push(action.payload);
     },
-    fetchActivities(state) {
+    fetchActivities(_state) {
       // In a real app, you would fetch activities from an API here
       // For now, we'll just return the existing activities
     },

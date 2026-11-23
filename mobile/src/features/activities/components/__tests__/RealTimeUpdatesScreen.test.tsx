@@ -16,7 +16,7 @@ class MockWebSocket {
 }
 
 // Replace the global WebSocket with the mock
-(global as any).WebSocket = MockWebSocket;
+(globalThis as any).WebSocket = MockWebSocket;
 
 describe('RealTimeUpdatesScreen', () => {
   it('renders correctly', async () => {
